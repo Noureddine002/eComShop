@@ -1,6 +1,5 @@
 # 📱 CustomCase - Personalized Phone Case E-Commerce
 
-![CustomCase Banner](/thumbnail.png)
 
 ## 🚀 Overview
 
