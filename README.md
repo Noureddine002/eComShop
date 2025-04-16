@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📱 CustomCase - Personalized Phone Case E-Commerce
 
-## Getting Started
+![CustomCase Banner](https://i.imgur.com/xYQXjxK.png)
 
-First, run the development server:
+## 🚀 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+CustomCase is a modern e-commerce platform that allows users to create and order personalized phone cases with their own images. Built with Next.js 14, TypeScript, and modern UI frameworks, this project offers a seamless user experience from design to checkout.
+
+## ✨ Features
+
+- 📱 Support for multiple phone models (iPhone X through iPhone 15)
+- 🎨 Intuitive image upload and customization interface
+- 🔍 Real-time preview of your custom case design
+- 🛒 Secure checkout with Stripe integration
+- 👤 User authentication with Kinde Auth
+- 📦 Order tracking and management
+- 💾 Data persistence with PostgreSQL and Prisma ORM
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Authentication**: Kinde Auth
+- **Database**: PostgreSQL with Prisma ORM
+- **UI Components**: 
+  - Tailwind CSS
+  - Radix UI
+  - Framer Motion
+  - HeadlessUI
+- **Image Storage**: UploadThing
+- **Payment Processing**: Stripe
+- **State Management**: React Query
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm/yarn
+- PostgreSQL database
+- Stripe account
+- Kinde Auth account
+- UploadThing account
+
+### Environment Setup
+
+Create a `.env` file with the following variables:
+
+```
+# Database
+DATABASE_URL="postgresql://..."
+
+# Authentication
+KINDE_CLIENT_ID="..."
+KINDE_CLIENT_SECRET="..."
+KINDE_ISSUER_URL="..."
+KINDE_SITE_URL="..."
+KINDE_POST_LOGOUT_REDIRECT_URL="..."
+KINDE_POST_LOGIN_REDIRECT_URL="..."
+
+# File Upload
+UPLOADTHING_SECRET="..."
+UPLOADTHING_APP_ID="..."
+
+# Payment
+STRIPE_SECRET_KEY="..."
+STRIPE_WEBHOOK_SECRET="..."
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="..."
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/ecomshop.git
+cd ecomshop
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Install dependencies
+npm install
 
-## Learn More
+# Set up the database
+npx prisma migrate dev
 
-To learn more about Next.js, take a look at the following resources:
+# Start the development server
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Usage Flow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Landing Page**: Users are greeted with a visually appealing landing page showcasing the product
+2. **Upload**: Users upload their image of choice
+3. **Customize**: Select phone model, case material, finish, and color
+4. **Preview**: See a realistic preview of the final product
+5. **Checkout**: Complete the purchase with shipping and payment details
+6. **Order Tracking**: Track order status from processing to shipping
 
-## Deploy on Vercel
+## 🚧 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/               # Next.js app directory
+│   ├── api/           # API routes
+│   ├── auth-callback/ # Authentication handling
+│   ├── configure/     # Configuration pages
+│   └── page.tsx       # Landing page
+├── components/        # Reusable components
+├── lib/               # Utility functions
+├── db/                # Database client and helpers
+├── validators/        # Input validation schemas
+└── config/            # Application configuration
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 📦 Deployment
+
+This application can be easily deployed to Vercel:
+
+```bash
+npm run build
+vercel --prod
+```
+
+## 🧩 API Endpoints
+
+- `POST /api/create-checkout` - Create a checkout session
+- `POST /api/webhook` - Handle Stripe webhook events
+- `POST /api/uploadthing` - Handle file uploads
+- `GET /api/orders` - Get user orders
+
+## 🔒 Authentication
+
+This project uses Kinde Auth for authentication, providing secure login and user management features.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgements
+
+- Next.js Team for the amazing framework
+- Tailwind and Radix UI for beautiful components
+- All open-source contributors whose libraries made this project possible
