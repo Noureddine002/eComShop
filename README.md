@@ -1,10 +1,12 @@
 # 📱 CustomCase - Personalized Phone Case E-Commerce
 
-![CustomCase Banner](https://i.imgur.com/xYQXjxK.png)
+![CustomCase Banner](/thumbnail.png)
 
 ## 🚀 Overview
 
-CustomCase is a modern e-commerce platform that allows users to create and order personalized phone cases with their own images. Built with Next.js 14, TypeScript, and modern UI frameworks, this project offers a seamless user experience from design to checkout.
+CustomCase lets customers create unique phone cases with their personal photos. Upload any image, position it perfectly on your chosen phone model, and see a real-time preview of your custom case before ordering. With high-quality materials and durable printing technology, your case will showcase your image while protecting your device.
+
+Our platform features an intuitive drag-and-drop interface, supports multiple iPhone models (X-15), offers various materials and finishes, and provides secure checkout with order tracking.
 
 ## ✨ Features
 
